@@ -1,0 +1,20 @@
+{% extends 'commons/base.twig' %}
+
+{% block css %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ base_url('assets/css/commons/formulario.css') }}"/>
+{% endblock css %}
+
+{% block js %}
+    {{ parent() }}
+    <script src="{{ base_url('assets/js/commons/formulario.js') }}"></script>
+    <script src="{{ base_url('assets/js/cadastros/manutencao/main.js') }}"></script>
+{% endblock js %}
+
+{% set titulo_tela = "Lista de manutenções" %}
+{% set url_form = "cadastros/manutencao" %}
+{% set url_api = "manutencao" %}
+
+{% block body %}
+   {% include 'templates/lista.twig' %}
+{% endblock body %}

@@ -1,0 +1,20 @@
+{% extends 'commons/base.twig' %}
+
+{% block css %}
+	{{ parent() }}
+	<link rel="stylesheet" type="text/css" href="{{ base_url('assets/css/commons/formulario.css') }}"/>
+{% endblock css %}
+
+{% block js %}
+	{{ parent() }}
+	<script src="{{ base_url('assets/js/commons/formulario.js') }}"></script>
+	<script src="{{ base_url('assets/js/cadastros/grupo_veiculo/main.js') }}"></script>
+{% endblock js %}
+
+{% set titulo_tela = "Lista de grupo de veículos" %}
+{% set url_form = "cadastros/grupo_veiculo" %}
+{% set url_api = "grupoVeiculo" %}
+
+{% block body %}
+	{% include 'templates/lista.twig' %}
+{% endblock body %}

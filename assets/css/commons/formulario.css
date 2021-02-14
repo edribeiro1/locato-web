@@ -1,0 +1,55 @@
+#grid-lista {
+   min-height: 200px;
+   position: relative;
+}
+
+#base-formulario label {
+   margin-bottom: 2px;  
+}
+
+#base-formulario .input-group {
+   flex-wrap: nowrap;
+}
+
+#base-formulario .input-group-prepend, #base-formulario .input-group>.form-control {
+   max-height: 35px;
+   height: 35px;
+}
+
+#base-formulario .input-group-text {
+   width: 42px;
+   display: block;
+}
+
+.btn-acoes-formulario {
+   margin-top: 1.25rem;
+}
+
+.iziToast-buttons {
+   width: 100%;
+   text-align: center;
+}
+
+.iziToast-texts {
+   margin-right: 0px !important;
+}
+
+@media (max-width: 500px) {
+
+   #base-formulario .container {
+      padding: 0px;
+   }
+   
+   #base-formulario .card {
+      border: none;
+   }
+
+   #base-formulario>.card-body {
+      padding: 0px;
+   }
+
+   #btn-salvar-formulario {
+      margin: 1.25rem;
+   }
+
+}

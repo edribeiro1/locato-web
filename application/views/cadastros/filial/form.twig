@@ -1,0 +1,69 @@
+{% extends 'commons/base.twig' %}
+
+{% block css %}
+    {{ parent() }}
+    <link href="{{ base_url('assets/libs/select2/css/select2.min.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{ base_url('assets/css/commons/formulario.css') }}"/>
+{% endblock css %}
+
+{% block js %}
+    {{ parent() }}
+    <script src="{{ base_url('assets/libs/select2/js/select2.min.js') }}"></script>
+    <script src="{{ base_url('assets/libs/select2/js/pt-br.js') }}"></script>
+    <script src="{{ base_url('assets/js/commons/formulario.js') }}"></script>
+    <script src="{{ base_url('assets/js/cadastros/filial/main.js') }}"></script>
+{% endblock js %}
+
+{% set titulo_tela = "Filial" %}
+{% set chave_id = "fil_id" %}
+{% set url_form = "cadastros/filial" %}
+{% set url_api = "filial" %}
+
+{% block descricao_tela %}
+    <a class="ancora-link" href="{{ base_url('cadastros/filial/lista') }}">Lista de filial</a>/<span>{{titulo_tela}}</span>
+{% endblock descricao_tela %}
+
+{% block body %}
+   {% embed 'templates/formulario.twig' %}
+      {% block body_form %}
+      
+         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <span style="font-size: 18px;"><i class="fas fa-industry"></i> Cadastro de filial</span>
+            <hr>
+         </div>
+
+         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+            <label>Nome fantasia</label>
+            <div class="input-group">
+               <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fas fa-edit"></i></div>
+               </div>
+               <input type="text" class="form-control" id="fil_nome_fantasia" data-bind="fil_nome_fantasia">
+            </div>
+         </div>
+
+         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+            <label>Telefone</label>
+            <div class="input-group">
+               <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fas fa-phone-alt"></i></div>
+               </div>
+               <input type="text" class="form-control" id="fil_telefone" data-bind="fil_telefone"> 
+            </div>
+         </div>
+
+         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 form-group">
+            <label>Razão social</label>
+            <div class="input-group">
+               <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fas fa-id-card"></i></div>
+               </div>
+               <input type="text" class="form-control" id="fil_razao_social" data-bind="fil_razao_social"> 
+            </div>
+         </div>
+
+         
+
+      {% endblock body_form %}
+   {% endembed %}
+{% endblock body %}

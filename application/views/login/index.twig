@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Login - Locato</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% block css %}
+      <link rel="icon" href="{{ base_url('images/icon/icon.png') }}" type="image/png" />
+      <link rel="shortcut icon" href="{{ base_url('images/icon/icon.png') }}" type="image/png" />
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/css/reset.css') }}" />
+      <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/libs/fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.min.css') }}" />
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/libs/bootstrap-4.0.0/css/bootstrap.min.css') }}" />
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/libs/izitoast/css/iziToast.min.css') }}" />
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/libs/ladda/ladda.min.css') }}" />
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/css/login/main.css') }}" />
+   {% endblock css %}
+   
+</head>
+<body data-baseurl="{{ base_url() }}">
+
+   <div class="container-login foto-login">
+
+      <div class="form-login">
+            <div class="header-login">
+               <div class="logo"></div>
+               <div class="desc-login">
+                  <label class="nome-sistema">Locato</label>
+                  <span class="desc-sistema">Excelência em locação</span>
+               </div>
+            </div>
+
+         <div class="form-group">
+            <label for="login">Login</label>
+            <input type="text" class="form-control" id="usuario">
+         </div>
+
+         <div class="form-group">
+            <label for="senha">Senha</label>
+            <input type="password" class="form-control" id="senha">
+         </div>
+
+         <button id="btn_entrar" type="submit" class="btn btn-purple ladda-button" data-style="zoom-in" data-spinner-color="#ffffff">Entrar</button>
+
+         <label class="recuperar-senha">Esqueceu a senha?</label>
+      </div>
+   </div>
+   
+
+   {% block body %}
+   {% endblock body %}
+
+   {% block js %}
+      <script src="{{ base_url('assets/libs/jquery-3.3.1/jquery-3.3.1.min.js') }}"></script>
+      <script src="{{ base_url('assets/libs/bootstrap-4.0.0/js/bootstrap.min.js') }}"></script>
+      <script src="{{ base_url('assets/libs/izitoast/js/iziToast.min.js') }}"></script>
+      <script src="{{ base_url('assets/libs/ladda/spin.min.js') }}"></script>
+      <script src="{{ base_url('assets/libs/ladda/ladda.min.js') }}"></script>
+      <script src="{{ base_url('assets/js/commons/requester.js') }}"></script>
+      <script src="{{ base_url('assets/js/login/main.js') }}"></script>
+   {% endblock js %}
+</body>
+</html>

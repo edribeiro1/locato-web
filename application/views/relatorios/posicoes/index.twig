@@ -1,0 +1,77 @@
+{% extends 'commons/base.twig' %}
+
+{% block css %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ base_url('assets/css/commons/relatorio.css') }}"/>
+{% endblock css %}
+
+{% block js %}
+    {{ parent() }}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1EsboQXnnRnC5XmQGw7LsN-hU3UE_r-Q"></script>
+    {# <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1EsboQXnnRnC5XmQGw7LsN-hU3UE_r-Q&v=3.31"></script> #}
+    <script src="{{ base_url('assets/js/commons/mapa_google.js') }}"></script>
+    <script src="{{ base_url('assets/js/relatorios/posicoes/main.js') }}"></script>
+{% endblock js %}
+
+{% set titulo_tela = "Relatório de posições" %}
+
+{% block body %}
+   <div class="card" id="base-relatorio">
+      <div class="card-body card-body-mobile">
+
+         <div class="row"> 
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12" style="margin-bottom: 20px;">
+               <div class="input-group">
+                  <div class="input-group-prepend">
+                     <div class="input-group-text"><i class="fas fa-car"></i></div>
+                  </div>
+                  <select class="select2 form-control" id="vei_id" data-bind="vei_id" >
+                     <option value="-1" disabled selected>Selecione o veículo...</option>
+                  </select>
+               </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12" style="margin-bottom: 20px;">
+               <div class="input-group">
+                  <div class="input-group-prepend">
+                     <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                  </div>
+                  <input class="datetimepicker form-control" id="data_inicial" data-bind="data_inicial" placeholder="Data inicial"/>
+               </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12" style="margin-bottom: 20px;">
+               <div class="input-group">
+                  <div class="input-group-prepend">
+                     <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                  </div>
+                  <input class="datetimepicker form-control" id="data_final" data-bind="data_final" placeholder="Data final"/>
+               </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12" style="margin-bottom: 20px;">
+               <button class="btn btn-dark pull-right ladda-button" id="btn-gerar-relatorio" data-style="zoom-in" data-spinner-color="white">Gerar relatório</button>
+            </div>
+         </div>
+         
+
+         <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+               <div class="card bg-light card-dash">
+                  <div class="card-header card-header-dash">
+                     <i class="fas fa-map"></i> Mapa
+                  </div>
+                  <div class="card-body card-body-dash card-body-mobile" id="mapa" style="height: 600px;">
+                  </div>
+               </div>
+            </div>
+        
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" style="margin-top: 20px;">
+               <table id="relatorio-bootstrap-table" class="bootstrap-table" style="width: 100%;">
+               </table>
+            </div>
+         </div>
+
+      </div>
+   </div>
+{% endblock body %}

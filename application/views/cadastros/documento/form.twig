@@ -1,0 +1,89 @@
+{% extends 'commons/base.twig' %}
+
+{% block css %}
+	{{ parent() }}
+	<link rel="stylesheet" type="text/css" href="{{ base_url('assets/css/commons/formulario.css') }}"/>
+{% endblock css %}
+
+{% block js %}
+	{{ parent() }}
+	<script src="{{ base_url('assets/js/commons/formulario.js') }}"></script>
+	<script src="{{ base_url('assets/js/cadastros/documento/main.js') }}"></script>
+{% endblock js %}
+
+{% set titulo_tela = "Documento" %}
+{% set chave_id = "doc_id" %}
+{% set url_form = "cadastros/documento" %}
+{% set url_api = "documento" %}
+
+{% block descricao_tela %}
+	<a class="ancora-link" href="{{ base_url('cadastros/documento/lista') }}">Lista de documentos</a>/<span>{{titulo_tela}}</span>
+{% endblock descricao_tela %}
+
+{% block body %}
+	{% embed 'templates/formulario.twig' %}
+		{% block body_form %}
+
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+				<span style="font-size: 18px;">
+					<i class="far fa-file-alt"></i>
+					Cadastro de documento</span>
+				<hr>
+			</div>
+
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+				<label>Descrição</label>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+							<i class="fas fa-edit"></i>
+						</div>
+					</div>
+					<input type="text" class="form-control" id="doc_descricao" data-bind="doc_descricao">
+				</div>
+			</div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+				<label>Data vencimento</label>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+							<i class="fas fa-calendar-alt"></i>
+						</div>
+					</div>
+					 <input class="datetimepicker form-control" id="doc_data_vencimento" data-bind="doc_data_vencimento" />
+				</div>
+			</div>
+
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+				<label>Filial</label>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+							<i class="fas fa-industry"></i>
+						</div>
+					</div>
+					<select class="select2 form-control" id="doc_id_filial" data-bind="doc_id_filial">
+						<option value="-1">Nenhum selecionado</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+				<label>Veículo</label>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+							<i class="fas fa-car"></i>
+						</div>
+					</div>
+					<select class="select2 form-control" id="doc_id_veiculo" data-bind="doc_id_veiculo">
+						<option value="-1">Nenhum selecionado</option>
+					</select>
+				</div>
+			</div>
+
+
+		{% endblock body_form %}
+	{% endembed %}
+{% endblock body %}

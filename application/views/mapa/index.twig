@@ -1,0 +1,19 @@
+{% extends 'commons/base.twig' %}
+
+{% block css %}
+	{{ parent() }}
+	<link rel="stylesheet" type="text/css" href="{{ base_url('assets/css/mapa/main.css') }}"/>
+{% endblock css %}
+
+{% block js %}
+	{{ parent() }}
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1EsboQXnnRnC5XmQGw7LsN-hU3UE_r-Q"></script>
+	<script src="{{ base_url('assets/js/commons/mapa_google.js') }}"></script>
+	<script src="{{ base_url('assets/js/mapa/main.js') }}"></script>
+{% endblock js %}
+
+{% set titulo_tela = "Mapa" %}
+
+{% block body_principal %}
+    <div id='mapa'></div>
+{% endblock body_principal %}

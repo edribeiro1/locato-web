@@ -1,0 +1,20 @@
+{% extends 'commons/base.twig' %}
+
+{% block css %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ base_url('assets/css/commons/formulario.css') }}"/>
+{% endblock css %}
+
+{% block js %}
+    {{ parent() }}
+    <script src="{{ base_url('assets/js/commons/formulario.js') }}"></script>
+    <script src="{{ base_url('assets/js/cadastros/usuario/main.js') }}"></script>
+{% endblock js %}
+
+{% set titulo_tela = "Lista de usuários" %}
+{% set url_form = "cadastros/usuario" %}
+{% set url_api = "usuario" %}
+
+{% block body %}
+   {% include 'templates/lista.twig' %}
+{% endblock body %}

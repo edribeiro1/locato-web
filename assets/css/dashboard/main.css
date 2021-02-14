@@ -1,0 +1,94 @@
+.bg-cadet-blue {
+   background-color: cadetblue;
+   color: white;
+}
+
+.card-resumo {
+   height: 160px;
+   display: flex;
+   cursor: pointer;
+}
+
+.icone-resumo {
+   height: 45px;
+   width: 45px;
+   font-size: 25px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #eae8fd;
+   border-radius: 50%;
+   color: #7367f0;
+   margin-bottom: 5px;
+}
+
+#lista-instalados {
+   height: 727px;
+}
+
+.desc-resumo {
+   color: #626262;
+   font-weight: bolder;
+   font-size: 20px;
+}
+
+.valor-resumo {
+   font-size: 24px;
+   color: #2b2b2b;
+   font-weight: bolder;
+}
+
+.div-valor-resumo {
+   display: flex; 
+   flex-direction: column; 
+   align-items: flex-end; 
+   width: 100%;
+}
+
+#mapa {
+   height: 655px;
+}
+
+.card-header-dash {
+   font-weight: 600; 
+   padding: 5px 10px 5px 10px; 
+   background-color: #2a2b2d; 
+   color: white;
+}
+
+.card-dash {
+   margin-bottom: 15px;
+}
+
+.panel-calendar {
+    background: white;
+    padding: 10px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px 0px #00000030;
+    margin-bottom: 10px;
+}
+
+.fc-button-primary:hover {
+    background-color: #4958a2;
+    border-color: #4958a2;
+}
+
+.fc-button-primary:disabled {
+    color: #7367f0;
+    background-color: #eae8fd;
+    border-color: #eae8fd;
+}
+
+.fc-button-primary{
+    background-color: #7367f0;
+    border-color: #7367f0;
+}
+
+.fc-button-primary:not(:disabled):active, .fc-button-primary:not(:disabled).fc-button-active {
+    background-color: #4958a2;
+    border-color: #4958a2;
+}
+
+#calendar {
+    color: #626262;
+}

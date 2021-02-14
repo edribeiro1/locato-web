@@ -1,0 +1,95 @@
+.bootstrap-table thead {
+   background-color: #7367f0;
+   color: white;
+}
+
+.pull-left {
+   float: left;
+}
+
+.pull-right {
+   float: right;;
+}
+
+
+.fixed-table-pagination {
+   border: none;
+}
+.fixed-table-container {
+   border: none !important;
+}
+
+.fixed-table-body{
+   border: none;
+   border-radius: 4px;
+   border-bottom: 1px solid #dddddd;
+}
+.bootstrap-table .table tbody {
+   background-color: white;
+}
+
+.bootstrap-table .table {
+   border: none;
+}
+
+.bootstrap-table .table thead>tr>th{
+   border-top: none;
+   border-left: none;
+   border-right: none;
+}
+
+.bootstrap-table td {
+   font-size: 13px;
+   color: #777777;
+   border-left: none !important;
+   border-right: none !important;
+}
+
+.bootstrap-table th {
+   font-size: 14px;
+   font-weight: 600;
+}
+
+.pagination-detail {
+   font-size: 12px;
+   color: #777777;
+}
+
+.bootstrap-table ul.pagination {
+   border: 1px solid #7367f0;
+}
+
+.bootstrap-table li.page-pre {
+   border-right: 1px solid #7367f0;
+}
+
+.bootstrap-table li.page-number {
+   border-right: 1px solid #7367f0;
+}
+
+.bootstrap-table li.active>a {
+   background-color: #7367f0;
+   color: white;
+   border: 1px solid #7367f0;
+   padding: 3.5px 12px;
+}
+
+.bootstrap-table li>a {
+   color: #7367f0;
+   text-decoration: none;
+}
+
+.bootstrap-table .search {
+   margin-top: 0px;
+}
+
+.fixed-table-loading {
+   top: 0px !important;
+   background-color: white;
+   font-size: 0px;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: 60px;
+   background-image: url('../../../images/loadings/cubo.gif');
+   border-radius: 4px;
+}

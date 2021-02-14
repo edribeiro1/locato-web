@@ -1,0 +1,134 @@
+{% extends 'commons/base.twig' %}
+
+{% block css %}
+	{{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ base_url('assets/libs/fullcalendar-4.4.2/packages/core/main.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ base_url('assets/libs/fullcalendar-4.4.2/packages/daygrid/main.css') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ base_url('assets/css/dashboard/main.css') }}"/>
+{% endblock css %}
+
+{% block js %}
+	{{ parent() }}
+	<script src="{{ base_url('assets/libs/fullcalendar-4.4.2/packages/core/main.js') }}"></script>
+<script src="{{ base_url('assets/libs/fullcalendar-4.4.2/packages/core/locales/pt-br.js') }}"></script>
+	<script src="{{ base_url('assets/libs/fullcalendar-4.4.2/packages/daygrid/main.js') }}"></script>
+	<script src="{{ base_url('assets/js/dashboard/main.js') }}"></script>
+{% endblock js %}
+
+{% set titulo_tela = "Dashboard" %}
+
+{% block body %}
+	<div class="row resumos">
+
+		<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+			<div class="card card-dash">
+
+				<div class="card-body card-resumo" data-url="cadastros/documento/lista">
+					<div class="div-loading">
+						<i class="fas fa-spinner fa-spin"></i>
+					</div>
+					<div>
+						<div class="icone-resumo">
+							<i class="fas fa-file-alt"></i>
+						</div>
+						<span class="desc-resumo">Documentos</span>
+					</div>
+
+					<div class="div-valor-resumo">
+						<span class="valor-resumo" data-id="documentos_a_vencer">0</span>
+						<span>A vencer</span>
+						<span class="valor-resumo" data-id="documentos_vencidos">0</span>
+						<span>Vencidos</span>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+			<div class="card card-dash">
+				<div class="card-body card-resumo" data-url="cadastros/manutencao/lista">
+					<div class="div-loading">
+						<i class="fas fa-spinner fa-spin"></i>
+					</div>
+					<div>
+						<div class="icone-resumo">
+							<i class="fas fa-wrench"></i>
+						</div>
+						<span class="desc-resumo">Manutenções</span>
+					</div>
+					<div class="div-valor-resumo">
+						<span class="valor-resumo" data-id="manutencoes_a_vencer">0</span>
+						<span>A vencer</span>
+						<span class="valor-resumo" data-id="manutencoes_vencidas">0</span>
+						<span>Vencidos</span>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+			<div class="card card-dash">
+				<div class="card-body card-resumo" data-url="ferramentas/locacao/lista">
+					<div class="div-loading">
+						<i class="fas fa-spinner fa-spin"></i>
+					</div>
+					<div>
+						<div class="icone-resumo">
+							<i class="fas fa-handshake"></i>
+						</div>
+						<span class="desc-resumo">Devoluções</span>
+					</div>
+					<div class="div-valor-resumo">
+						<span class="valor-resumo" data-id="devolvidos">0</span>
+						<span>Devolvidos</span>
+						<span class="valor-resumo" data-id="nao_devolvidos">0</span>
+						<span>Não devolvidos</span>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+			<div class="card card-dash">
+				<div class="card-body card-resumo" data-url="ferramentas/locacao/lista">
+					<div class="div-loading">
+						<i class="fas fa-spinner fa-spin"></i>
+					</div>
+					<div>
+						<div class="icone-resumo">
+							<i class="fas fa-hand-holding-usd"></i>
+						</div>
+						<span class="desc-resumo">Locações</span>
+					</div>
+					<div class="div-valor-resumo">
+						<span class="valor-resumo" data-id="locacoes_agendadas">0</span>
+						<span>Agendados</span>
+						<span class="valor-resumo" data-id="locacoes_fidelizadas">0</span>
+						<span>Locados</span>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="panel-calendar">
+                <div class="container">
+                    <div class="legenda">
+                        <span class="badge" style="background-color: #e87600; color: white;">Documentos a vencer/vencidos</span>
+                        <span class="badge" style="background-color: #dc3545; color: white;">Manutenções a vencer/vencidos</span>
+                        <span class="badge" style="background-color: #009823; color: white;">Locações agendadas</span>
+                        <span class="badge" style="background-color: #3999ff; color: white;">Devoluções agendadas</span>
+                    </div>
+                    <div id="calendar"></div>
+                </div>
+            </div>
+        </div>
+	</div>
+
+{% endblock body %}

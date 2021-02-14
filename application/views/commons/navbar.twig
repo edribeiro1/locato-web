@@ -1,0 +1,28 @@
+<nav class="navbar">
+   {# <a class="navbar-brand" href="{{ base_url('dashboard') }}">
+      <img class="img-logo d-inline-block align-top" alt="Brand" src="{{ base_url('images/icon/kimeros_s.png') }}">
+   </a> #}
+      <div class="navbar-group-div pull-left">
+         <span class="menu-link">&#9776;</span>
+      </div>
+
+   
+      <div class="navbar-group-div pull-right">
+         <div id="notificacao">
+            <i class="far fa-bell"></i>
+            <span class="badge badge-danger badge-notificacao"></span>
+         </div>
+
+         <div class="btn-group">
+            <div class="dados-conta dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span style="margin:8px;" id="nome_usuario"></span>
+                  <i class="fas fa-user-circle fa-2x"></i>
+                  <div class="dropdown-menu drop-logout">
+                     <a class="dropdown-item" id="logout" href="{{ base_url('login')}}"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                  </div>
+            </div>
+         </div>
+      </div>
+      
+   </div>
+</nav>
