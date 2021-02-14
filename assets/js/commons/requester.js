@@ -1,7 +1,7 @@
 const REQUESTER = {
     gerarUrl: function (url) {
-        var urlApi = 'http://[::1]/api-locato/';
-        // var urlApi = 'http://ec2-54-237-81-183.compute-1.amazonaws.com/api-locato/';
+        // var urlApi = 'http://[::1]/api-locato/';
+        var urlApi = 'http://ec2-18-231-42-88.sa-east-1.compute.amazonaws.com/locato-api/';
         return urlApi + url + '/';
     },
     getToken: function() {
