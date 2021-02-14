@@ -11,15 +11,19 @@ class Router extends CI_Controller
         if ($action === 'login' || $action === '') {
             $this->twig->display("login/index");
         } 
+
         else if ($action === 'dashboard') {
             $this->twig->display("$action/index");
         } 
+
         else if ($action === 'mapa') {
             $this->twig->display("$action/index");
         }
+
         else if ($uri[count($uri)-2] == 'relatorios') {
             $this->twig->display("relatorios/$action/index");
         }
+        
         else {
             if (is_numeric($id) && (int)$id > 0) {
                 $action = 'form';
