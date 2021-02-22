@@ -88,7 +88,7 @@ var MAPA_GOOGLE = {
         }
     },
     getIcon: function (ignicao, tipo) {
-        let prefix = parseInt(ignicao) == 1 ? REQUESTER.gerarUrl('images/markers/on_') : REQUESTER.gerarUrl('images/markers/off_');
+        let prefix = parseInt(ignicao) == 1 ? (baseUrl + 'images/markers/on_') : (baseUrl + 'images/markers/off_');
         let urlImg = "";
         switch (tipo) {
             case 'Bicicleta': urlImg = prefix + 'bike.png'; break;
