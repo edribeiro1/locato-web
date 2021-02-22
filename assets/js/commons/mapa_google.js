@@ -27,8 +27,8 @@ var MAPA_GOOGLE = {
                     id: (configMarker.id ? configMarker.id : 0)
                 });
 
-                if (configMarker.hasOwnProperty(popupContent)) {
-                    MAPA_GOOGLE._popupEvent(popupContent, marker);
+                if ($.type(configMarker.popupContent) == 'string' && configMarker.popupContent.length > 0) {
+                    MAPA_GOOGLE._popupEvent(configMarker.popupContent, marker);
                 }
                 MAPA_GOOGLE._markers.push(marker);
             }
