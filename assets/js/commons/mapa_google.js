@@ -3,6 +3,7 @@ var MAPA_GOOGLE = {
     _markers: [],
     _objLayers: {},
     _polyline: {},
+    _popup: new google.maps.InfoWindow(),
     criaMapa: function (idElemento, options) {
         self = this;
         MAPA_GOOGLE._map = new google.maps.Map(document.getElementById(idElemento), $.extend({
@@ -17,14 +18,19 @@ var MAPA_GOOGLE = {
     criaMarkers: function (arrayMarkersLatLng) {
         if ($.isArray(arrayMarkersLatLng)) {
             for (i in arrayMarkersLatLng) {
-                let marker = arrayMarkersLatLng[i];
-                let opts = $.type(marker.options) == 'object' ? marker.options : {};
-                MAPA_GOOGLE._markers.push(new google.maps.Marker({
-                    position: marker.position,
+                let configMarker = arrayMarkersLatLng[i];
+                let opts = $.type(configMarker.options) == 'object' ? configMarker.options : {};
+                let marker = new google.maps.Marker({
+                    position: configMarker.position,
                     map: MAPA_GOOGLE._map,
-                    icon: marker.icon,
-                    id: (marker.id ? marker.id : 0)
-                }));
+                    icon: configMarker.icon,
+                    id: (configMarker.id ? configMarker.id : 0)
+                });
+
+                if (configMarker.hasOwnProperty(popupContent)) {
+                    MAPA_GOOGLE._popupEvent(popupContent, marker);
+                }
+                MAPA_GOOGLE._markers.push(marker);
             }
         }
     },
@@ -105,5 +111,11 @@ var MAPA_GOOGLE = {
             // origin: new google.maps.Point(0,0), // origin
             // anchor: new google.maps.Point(0, 0) // anchor 
         };
+    },
+    _popupEvent: function (content, marker) {
+        google.maps.event.addListener(marker, 'click', function() {
+            MAPA_GOOGLE._popup.setContent(content);
+            MAPA_GOOGLE._popup.open(MAPA_GOOGLE._map, marker);
+          });
     }
 }

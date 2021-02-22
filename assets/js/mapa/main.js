@@ -31,7 +31,8 @@ $(document).ready(function () {
                     lng: parseFloat(dados[i].lng)
                 },
                 icon: MAPA_GOOGLE.getIcon(dados[i].ult_pos_ignicao, 'Carro'),
-                id: dados[i].ult_pos_id
+                id: dados[i].ult_pos_id,
+                popupContent: `${dados[i].vei_descricao} - ${dados[i].vei_placa}`
             });
         }
         MAPA_GOOGLE.criaMarkers(markers);
